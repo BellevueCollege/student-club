@@ -31,9 +31,41 @@ function create_club_post_type() {
       'has_archive' 		=> 'clubs',
       'capability_type' 	=> 'page',
       'rewrite' 			=> array( 'slug' => "clubs" ),
+      'taxonomies'			=> array('status'),
     )
   );
   flush_rewrite_rules();
+}
+
+add_action( 'init', 'create_clubs_taxonomies', 0 );
+
+function create_clubs_taxonomies()
+{
+	$labels = array(
+		'name'              => _x( 'Status', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Status', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Statuses' ),
+		'all_items'         => __( 'All Statuses' ),
+		'parent_item'       => __( 'Parent Status' ),
+		'parent_item_colon' => __( 'Parent Status:' ),
+		'edit_item'         => __( 'Edit Status' ),
+		'update_item'       => __( 'Update Status' ),
+		'add_new_item'      => __( 'Add New Status' ),
+		'new_item_name'     => __( 'New Status Name' ),
+		'menu_name'         => __( 'Status' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'status' ),
+	);
+
+	register_taxonomy( 'status', array( 'clubs' ), $args );
+
 }
 
 
@@ -54,13 +86,7 @@ add_action('add_meta_boxes', 'add_club_custom_meta_box');
 
 //$prefix = 'custom_';
 $custom_club_meta_fields = array(
-array(
-        'label'=> 'Club Category',
-        'desc'  => 'Charted',
-        'name'  =>  'charted',
-        'id'    =>  'charted',
-        'type'  => 'checkbox'
-    ),
+
     array(
         'label'=> 'URL',
         'desc'  => 'Club Website',
