@@ -95,6 +95,13 @@ $custom_club_meta_fields = array(
         'type'  => 'text'
     ),
     array(
+        'label'=> 'Advisor Name',
+        'desc'  => '',
+        'name'  => 'club_advisor_name',
+        'id'    => 'club_advisor_name',
+        'type'  => 'text'
+    ),
+    array(
         'label'=> 'Advisor Email',
         'desc'  => '',
         'name'  => 'club_advisor_email',
