@@ -15,8 +15,8 @@ In addition to Title, description, attachments(using Add media) each post contai
 The templates for single and archive reside in mayflower theme.
 The plugin provides a way to create various statuses eg. Unchartered, Chartered, that the post can be associated to.
 So the following url should provide list of all the chartered and unchartered clubs:
-*.../status/chartered/
-*.../status/unchartered/
+*  .../status/chartered/
+*  .../status/unchartered/
 
 # Acceptance Criteria
 * The club information page should include the following information:
