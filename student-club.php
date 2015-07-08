@@ -34,7 +34,7 @@ function create_club_post_type() {
       'taxonomies'			=> array('status'),
     )
   );
-  flush_rewrite_rules();
+  
 }
 
 add_action( 'init', 'create_clubs_taxonomies', 0 );
@@ -67,6 +67,21 @@ function create_clubs_taxonomies()
 	register_taxonomy( 'status', array( 'clubs' ), $args );
 
 }
+
+function clubs_rewrite_flush() {
+    // First, we "add" the custom post type via the above written function.
+    // Note: "add" is written with quotes, as CPTs don't get added to the DB,
+    // They are only referenced in the post_type column with a post entry, 
+    // when you add a post of this CPT.
+
+    // Both the custom post type and the custom taxonomy need to be called in this instance
+    create_club_post_type();
+    create_clubs_taxonomies();
+
+    // You should *NEVER EVER* do this on every page load!!
+    flush_rewrite_rules();
+}
+register_activation_hook( __FILE__, 'clubs_rewrite_flush' );
 
 
 // Add the Meta Box
