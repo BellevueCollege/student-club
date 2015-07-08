@@ -4,7 +4,7 @@ Plugin Name: Student Club
 Plugin URI: https://github.com/BellevueCollege/student-club/
 Description: This plugin provides the user to create custom post for student clubs for Bellevue college
 Author: Bellevue College Information Technology Services
-Version: 1.0.0.0
+Version: 1.0.0.1
 Author URI: http://www.bellevuecollege.edu
 */
 
