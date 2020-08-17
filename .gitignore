@@ -4,6 +4,7 @@
 *.iws
 workspace.xml
 tasks.xml
+/.vscode/
 
 # ==================
 # Windows detritus
@@ -37,3 +38,5 @@ nbproject
 # Dreamweaver added files
 _notes
 dwsync.xml
+
+/vendor/

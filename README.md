@@ -1,16 +1,9 @@
 # Student-Club
 
-Student-Club plugin provides a way to create a custom post's in a new section of wordpress dashboard.
-In addition to Title, description, attachments(using Add media) each post contains following custom meta fields
-- Club Website URL
-- Advisor Name
-- Advisor Email
-- Advisor Phone Number
-- Club Contact Name
-- Club Contact Email
-- Meeting Location
-- Meeting Time
-- Budget Document Link
+The Student Club plugin provides a way to create a custom post in a new section of the WordPress dashboard.
+
+As of v2.0 this plugin uses the Advanced Custom Fields plugin to manage custom fields. `acf-student-club-fields.json`
+provides an import file to create all the necessary fields. 
 
 The templates for single and archive reside in mayflower theme.
 The plugin provides a way to create various statuses eg. Unchartered, Chartered, that the post can be associated to.
